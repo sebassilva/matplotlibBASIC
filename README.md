@@ -4,8 +4,9 @@
 
 Make sure you have pip installed by typibg "pip" in the terminal or console. Then just: 
 
-### pip install matplotlib 
-
+```
+pip install matplotlib 
+```
 
 
 # First graphic 
