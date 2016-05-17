@@ -17,7 +17,6 @@ lista = [21, 10, 0, 11, 9, 24, 20, 14, 1]
 print("lista desordenada {}".format(lista))
 insertionSort(lista)
 print("lista ordenada {}".format(lista))
-
 """
 print("SEGUNDO METODO")
 print("SEGUNDO METODO")
@@ -72,8 +71,6 @@ def particion(lista, inicio, fin):
 lista = [21, 10, 0, 11, 9, 24, 20, 14, 1]
 print("lista desordenada {}".format(lista))
 quicksort(lista)
-
-
 #Importando librerías
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -86,25 +83,25 @@ from time import time
 
 
 
+
 #Tamaños de la lista de números aleatorios a generar
-#datos = [ii*10 for ii in range(1,21)] 
+datos = [ii*5 for ii in range(1,5)] 
 
 tiempo_is = []  #Lista para guardar el tiempo de ejecución de insert sort
 tiempo_qs = []  #Lista para guardar el tiempo de ejecución de quick sort
 
-#for ii in datos:
-lista_is = random.sample(range(0, 20),15)  #!imortant GERRY El segundo argumento de range debe ser mayor o igual al tercer argumento 
-  #Se hace una copia de la lista para que se ejecute el algoritmo con los mismo números
-lista_qs = lista_is.copy() 
+for ii in datos:
+    lista_is = random.sample(range(0, 444), ii)
+    #Se hace una copia de la lista para que se ejecute el algoritmo con los mismo números
+    lista_qs = lista_is.copy() 
     
-t0 = time()  #Se guarda el tiempo inicial
-insertionSort(lista_is)
-tiempo_is.append(round(time()-t0, 6))   #Se le resta al tiempo actual, el tiempo inicial
-  
-t0 = time()    
-quicksort(lista_qs)
-tiempo_qs.append(round(time()-t0, 6))
-
+    t0 = time()  #Se guarda el tiempo inicial
+    insertionSort(lista_is)
+    tiempo_is.append(round(time()-t0, 6))   #Se le resta al tiempo actual, el tiempo inicial
+    
+    t0 = time()    
+    quicksort(lista_qs)
+    tiempo_qs.append(round(time()-t0, 6))
 
 #Imprimiendo tiempos parciales de ejecución
 print("Tiempos parciales de ejecución en INSERT SORT {} \n".format(tiempo_is))
@@ -124,7 +121,6 @@ ax.set_xlabel('Datos')
 ax.set_ylabel('Tiempo') 
 ax.grid(True)
 ax.legend(loc=2); 
-
 plt.title('Tiempo de ejecución (insert vs. quick)')
 plt.show()
 """
@@ -134,11 +130,11 @@ from matplotlib import style
 
 style.use('ggplot')
 
-x = [5,8,10]
-y = [12,16,6]
+x = datos
+y = tiempo_is
 
-x2 = [6,9,11]
-y2 = [6,15,7]
+x2 = datos
+y2 = tiempo_qs
 
 # can plot specifically, after just showing the defaults:
 plt.plot(x,y,linewidth=5)
