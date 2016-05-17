@@ -85,13 +85,13 @@ from time import time
 
 
 #Tamaños de la lista de números aleatorios a generar
-datos = [ii*5 for ii in range(1,5)] 
+datos = [ii*10 for ii in range(1,20)] 
 
 tiempo_is = []  #Lista para guardar el tiempo de ejecución de insert sort
 tiempo_qs = []  #Lista para guardar el tiempo de ejecución de quick sort
 
 for ii in datos:
-    lista_is = random.sample(range(0, 444), ii)
+    lista_is = random.sample(range(0, 1555), ii)
     #Se hace una copia de la lista para que se ejecute el algoritmo con los mismo números
     lista_qs = lista_is.copy() 
     
